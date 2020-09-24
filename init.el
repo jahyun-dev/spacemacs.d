@@ -80,7 +80,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
 
      ;; Include emojis into everything
-     emoji
+     ;; emoji
 
      ;; SPC g s opens Magit git client full screen (q restores previous layout)
      ;; refine hunk 'all highlights characters changed on each line
@@ -171,11 +171,11 @@ This function should only modify configuration layer settings."
      ;; Spell as you type with Flyspell package,
      ;; requires external command - ispell, hunspell, aspell
      ;; SPC S menu, SPC S s to check current word
-     spell-checking
+     ;; spell-checking
 
      ;; Use original flycheck fringe bitmaps
-     (syntax-checking :variables
-                      syntax-checking-use-original-bitmaps t)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-use-original-bitmaps t)
 
      ;; Visual file manager - `SPC p t'
      ;; treemacs-no-png-images t removes file and directory icons
@@ -342,9 +342,9 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
 
-   dotspacemacs-themes '(doom-gruvbox-light
+   dotspacemacs-themes '(doom-sourcerer
+                         doom-gruvbox-light
                          doom-solarized-light
-                         doom-sourcerer
                          kaolin-valley-dark
                          doom-solarized-dark
                          spacemacs-light
@@ -1230,14 +1230,14 @@ before packages are loaded."
   ;; MacOSX
   ;; Disable touchpad zoom gestures
   ;;
-  ;; (define-key global-map (kbd "<magnify-up>") nil)
-  ;; (define-key global-map (kbd "<magnify-down>") nil)
-  ;;
-  ;; (defun practicalli-nothing ()
-  ;;   (interactive)
-  ;;   (message "Buttons are not toys") )
-  ;;
-  ;; (define-key global-map (kbd "<magnify-up>") 'practicalli-nothing)
+  (define-key global-map (kbd "<magnify-up>") nil)
+  (define-key global-map (kbd "<magnify-down>") nil)
+
+  (defun practicalli-nothing ()
+    (interactive)
+    (message "Buttons are not toys"))
+
+  (define-key global-map (kbd "<magnify-up>") 'practicalli-nothing)
   ;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1470,7 +1470,7 @@ before packages are loaded."
 
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;; Literal Searching Configuration
+  ;; Literal] Searching Configuration
   ;;
   ;; Literal search, rather than regex, in spacemacs search - helm-ag
   ;; (setq-default helm-grep-ag-command-option "-Q")
@@ -1486,8 +1486,8 @@ before packages are loaded."
   ;; https://github.com/luxbock/evil-cleverparens
   ;;
   ;; add evil-cleverparens to clojure-mode
-  ;; (spacemacs/toggle-evil-cleverparens-on)
-  ;; (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  (spacemacs/toggle-evil-cleverparens-on)
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   ;; end of evil-smartparens
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
